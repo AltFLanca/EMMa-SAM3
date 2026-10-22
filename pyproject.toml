@@ -1,0 +1,33 @@
+[project]
+name = "emma-sam3"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10.19"
+dependencies = [
+    "accelerate>=1.14.0",
+    "emma-wrapper[hdf5source]>=0.1.14",
+    "opencv-python-headless>=4.11.0.86",
+    "torch>=2.11.0",
+    "torchvision>=0.26.0",
+    "transformers>=5.7.0.dev0",
+]
+
+[tool.uv.sources]
+emma-wrapper = { git = "https://github.com/AltFLanca/EMMa-Wrapper.git", rev = "c1d9a8cd6b09edb97325e8dd845c5100d7ffacca" }
+torch = [{ index = "pytorch-cu126", marker = "sys_platform == 'linux' or sys_platform == 'win32'" }]
+torchvision = [{ index = "pytorch-cu126", marker = "sys_platform == 'linux' or sys_platform == 'win32'" }]
+torchaudio = [{ index = "pytorch-cu126", marker = "sys_platform == 'linux' or sys_platform == 'win32'" }]
+transformers = { git = "https://github.com/huggingface/transformers.git" }
+
+[[tool.uv.index]]
+name = "pytorch-cu126"
+url = "https://download.pytorch.org/whl/cu126"
+explicit = true
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.2.0",
+    "matplotlib>=3.10.9",
+    "pillow>=12.2.0",
+]
