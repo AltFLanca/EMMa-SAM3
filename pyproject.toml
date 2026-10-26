@@ -1,7 +1,7 @@
 [project]
 name = "emma-sam3"
 version = "0.1.0"
-description = "Add your description here"
+description = "Generate foreground masks for EMMa product images using SAM3."
 readme = "README.md"
 requires-python = ">=3.10.19"
 dependencies = [
